@@ -1,0 +1,19 @@
+- Wyszukano trasę przejazdu
+- Utworzono ofertę dla pasażera
+- Zaakceptowano ofertę przejazdu
+- Zlecono preautoryzację środków
+  - Zablokowano środki na przejazd
+  - Odrzucono preautoryzację środków
+- Stworzono zlecenie przejazdu
+- Wysłano ofertę do kierowcy
+  - Zaakceptowano zlecenie przez kierowcę
+  - Odrzucono zlecenie przez kierowcę
+- Zainicjalizowano przejazd
+- Dojechano na miejsce odbioru
+  - Rozpoczęto naliczanie czasu oczekiwania
+- Rozpoczęto przejazd
+- Dojechano do miejsca docelowego
+- Sfinalizowano płatność za kurs
+- Zamknięto aktywny przejazd
+- Wystawiono recenzję kierowcy
+- Wystawiono recenzję pasażerowi
