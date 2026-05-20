@@ -15,8 +15,6 @@
 
 * **Cennik bazowy** uwzględniający strefę geograficzną, dystans oraz kategorię pojazdu.
 
----
-
 ## Reguły dotyczące wyceny i dopasowania
 
 ### Nie do złamania (Sztywne)
@@ -35,8 +33,6 @@
 * Dynamiczny overbooking (przydzielanie tego samego kierowcy do dwóch nakładających się rezerwacji planowanych).
 * Zmiana ceny gwarantowanej w trakcie trwania okna rezerwacji (2 minuty).
 
----
-
 ## Reguły dotyczące rezerwacji i płatności
 
 ### Sztywne
@@ -54,8 +50,6 @@
 
 * Limitowanie liczby przejazdów per użytkownik w godzinach szczytu (prime time).
 * Możliwość negocjowania ceny przez pasażera wewnątrz aplikacji.
-
----
 
 ## Procesy
 
@@ -77,8 +71,6 @@
 * Jeśli pre-autoryzacja karty w pkt. 5 zakończy się niepowodzeniem, proces jest przerywany błędem ("Brak środków").
 * Jeśli kierowca nie zareaguje w ciągu 15 sekund (lub odrzuci ofertę), system natychmiast wraca do pkt. 7 i szuka kolejnego kierowcy.
 
----
-
 ### 2. Realizacja i zakończenie przejazdu
 
 1. Kierowca jedzie do punktu A (pasażer śledzi trasę na żywo).
@@ -98,8 +90,6 @@
 #### Dodatkowe funkcje:
 
 * W trakcie kroku 5 (jazda do punktu B), kierowca może zmienić swój status na "Przerwa" po zakończeniu bieżącego kursu – wtedy system nie będzie podsuwał mu kolejnych zleceń w trakcie jazdy.
-
----
 
 ### 3. Rezerwacja przejazdu (Tryb planowany)
 
