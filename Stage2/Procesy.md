@@ -53,10 +53,10 @@
 
 ### 1. Wycena i zlecenie przejazdu (Tryb natychmiastowy)
 
-1. Pasażer otwiera aplikację i podaje punkt A oraz punkt B.
+1. Pasażer otwiera aplikację i podaje punkt A oraz punkt B oraz wybiera kategorię pojazdu (Standard/Premium/Van).
 2. System oblicza dystans oraz pobiera aktualny mnożnik popytu (np. ze względu na warunki pogodowe lub godziny szczytu).
 3. System proponuje gwarantowaną cenę ważną przez 2 minuty oraz estymowany czas dojazdu.
-4. Pasażer wybiera kategorię pojazdu (Standard/Premium/Van) i klika "Zamawiam".
+4. Pasażer klika "Zamawiam".
 5. System wykonuje pre-autoryzację środków na karcie płatniczej pasażera.
 6. System wysyła zdarzenie o rezerwacji przejazdu do kolejki zleceń.
 7. System znajduje najbliższego dostępnego kierowcę spełniającego kryteria i wysyła mu ofertę.
@@ -91,10 +91,10 @@
 
 ### 3. Rezerwacja przejazdu (Tryb planowany)
 
-1. Pasażer otwiera aplikację, podaje punkt A, punkt B oraz planowaną datę i godzinę podstawienia.
+1. Pasażer otwiera aplikację, podaje punkt A, punkt B oraz kategorię auta, planowaną datę i godzinę podstawienia.
 2. System oblicza bazową stawkę i wyświetla cenę dla wybranej kategorii pojazdu.
 3. Pasażer klika "Zarezerwuj przejazd".
-4. System wykonuje pre-autoryzację (lub pełne pobranie środków w zależności od polityki firmy) w celu zabezpieczenia rezerwacji.
+4. System wykonuje pełne pobranie środków w celu zabezpieczenia rezerwacji.
 5. System blokuje dostępność jednego z kierowców w danej strefie w wybranym oknie czasowym, gwarantując realizację.
 6. System wysyła pasażerowi potwierdzenie rezerwacji planowanej.
 
