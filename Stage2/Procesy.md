@@ -2,16 +2,14 @@
 
 * **Wiele miast**, z których każde podzielone jest na **strefy geograficzne**.
 * **Wielu kierowców** przypisanych do miasta, gdzie każdy znajduje się w jednym ze stanów:
-* Dostępny,
-* W trakcie przejazdu,
-* Przerwa.
-
+  * Dostępny,
+  * W trakcie przejazdu,
+  * Przerwa.
 
 * **Wiele pojazdów** przypisanych do kierowców, dzielących się na kategorie:
-* Standard (4 miejsca),
-* Premium (4 miejsca, wyższy standard, wyższa ocena kierowcy),
-* Van (6 miejsc).
-
+  * Standard (4 miejsca),
+  * Premium (4 miejsca, wyższy standard, wyższa ocena kierowcy),
+  * Van (6 miejsc).
 
 * **Cennik bazowy** uwzględniający strefę geograficzną, dystans oraz kategorię pojazdu.
 
