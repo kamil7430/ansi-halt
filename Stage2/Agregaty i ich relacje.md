@@ -32,12 +32,16 @@ graph TD
         T[Trasa A do B]:::root
     end
 
-    subgraph Zapytanie_Aggregate [Zapytanie o Przejazd]
-        ZOP[Zlecenie / Preautoryzacja]:::root
+    subgraph Zapytanie_Podstan [Zapytanie o Przejazd]
+        ZAP[Zapytanie]:::root
+    end
+
+    subgraph Zlecenie_Podstan [Zlecenie Preautoryzowane]
+        ZLE[Zlecenie: Tryb natychmiastowy lub planowany]:::root
     end
 
     subgraph Przejazd_Aggregate [Aktywny Przejazd]
-        PR[Przejazd / Kurs]:::root
+        PR[Przejazd]:::root
     end
 
     subgraph Archiwum_Aggregate [Historia i Rozliczenie]
@@ -45,24 +49,29 @@ graph TD
     end
 
     %% --- RELACJE STRUKTURALNE I CENOWE ---
-    CB -->|Określa stawkę dla| S
     CB -->|Uwzględnia| KP
     P -->|Jest określonego typu| KP
     CD -->|Określany dla| S
     T -->|Punkt A i B w| S
+    CB -->|Określa stawkę dla| S
 
-    %% --- PRZEPŁYW BIZNESOWY (ZAPYTANIE -> PRZEJAZD) ---
-    ZOP -->|Definiuje| T
-    ZOP -->|Pobiera dynamiczny| CD
-    ZOP -->|Szuka i dopasowuje| K
+    %% --- PRZEPŁYW BIZNESOWY ---
+    ZAP -->|Definiuje| T
+    ZAP -->|Pobiera dynamiczny| CD
     
-    ZOP -->|Inicjuje po akceptacji| PR
+    ZAP -->|Sukces preautoryzacji tworzy| ZLE
+    
+    %% Rozbicie logiki matchowania w zależności od trybu zlecenia
+    ZLE -->|Tryb Natychmiastowy: Szuka ad-hoc| K
+    ZLE -->|Tryb Planowany: Gwarantuje/Blokuje slot| K
+    
+    ZLE -->|Inicjuje w odpowiednim czasie| PR
+    
     PR -->|Dotyczy| T
     PR -->|Ma przypisanego| K
-    
     PR -->|Po zakończeniu trafia do| HR
 
-    %% Style dla kontenerów (subgraph) - wymuszenie białego tekstu nagłówków
+    %% Style dla kontenerów (subgraph)
     style Cennik_Bazowy fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
     style Miasto_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
     style Pojazd_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
@@ -70,6 +79,7 @@ graph TD
     style Wycena_Dynamiczna fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
     style Przejazd_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
     style Trasa_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
-    style Zapytanie_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
+    style Zapytanie_Podstan fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
+    style Zlecenie_Podstan fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
     style Archiwum_Aggregate fill:none,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5,color:#fff
 ```
