@@ -52,13 +52,15 @@ graph TD
     CB -->|Uwzględnia| KP
     P -->|Jest określonego typu| KP
     CD -->|Określany dla| S
-    T -->|Punkt A i B w| S
     CB -->|Określa stawkę dla| S
+    T -->|Punkt A i B w| S
+
+    %% --- NOWA LOGIKA WYCENY (ZGODNA Z SEKWENCJĄ) ---
+    ZAP -->|Definiuje i odpytuje o koszt| T
+    T -->|Pobiera stawkę z| CB
+    T -->|Pobiera mnożnik z| CD
 
     %% --- PRZEPŁYW BIZNESOWY ---
-    ZAP -->|Definiuje| T
-    ZAP -->|Pobiera dynamiczny| CD
-    
     ZAP -->|Sukces preautoryzacji tworzy| ZLE
     
     %% Rozbicie logiki matchowania w zależności od trybu zlecenia
